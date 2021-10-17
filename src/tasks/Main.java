@@ -5,6 +5,9 @@ import tasks.task2.Rectangle;
 import tasks.task3.Employee;
 import tasks.task4.Author;
 import tasks.task4.Book;
+import tasks.task5.MyPoint;
+
+import java.awt.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -32,5 +35,12 @@ public class Main {
         Book book = new Book("book1",authors,100,10);
         System.out.println(book);
         System.out.println(book.getAuthorNames());
+
+        MyPoint p1 = new MyPoint(1,1);
+        MyPoint p2 = new MyPoint(5,0);
+        System.out.println(p1);
+        System.out.println(p2);
+        System.out.println(p1.distance(p2));
+        System.out.println(p1.distance());
     }
 }
