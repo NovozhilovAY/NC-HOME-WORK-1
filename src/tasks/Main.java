@@ -3,6 +3,8 @@ package tasks;
 import tasks.task1.Circle;
 import tasks.task2.Rectangle;
 import tasks.task3.Employee;
+import tasks.task4.Author;
+import tasks.task4.Book;
 
 public class Main {
     public static void main(String[] args) {
@@ -25,5 +27,10 @@ public class Main {
         System.out.println(employee.raiseSalary(30));
         System.out.println(employee);
         System.out.println(employee.getAnnualSalary());
+
+        Author authors[] = {new Author("name1","email1",'m'),new Author("name2","email2",'f')};
+        Book book = new Book("book1",authors,100,10);
+        System.out.println(book);
+        System.out.println(book.getAuthorNames());
     }
 }
