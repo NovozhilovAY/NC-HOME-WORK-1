@@ -1,6 +1,6 @@
-package tasks.task6;
+package tasks.part1.task6;
 
-import tasks.task5.MyPoint;
+import tasks.part1.task5.MyPoint;
 
 public class MyTriangle {
     private MyPoint v1;

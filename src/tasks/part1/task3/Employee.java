@@ -1,4 +1,4 @@
-package tasks.task3;
+package tasks.part1.task3;
 
 public class Employee {
     private int id;

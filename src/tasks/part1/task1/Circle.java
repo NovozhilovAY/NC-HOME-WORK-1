@@ -1,4 +1,4 @@
-package tasks.task1;
+package tasks.part1.task1;
 
 public class Circle {
     private double radius = 1.0;

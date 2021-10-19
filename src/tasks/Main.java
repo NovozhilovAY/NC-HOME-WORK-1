@@ -1,14 +1,12 @@
 package tasks;
 
-import tasks.task1.Circle;
-import tasks.task2.Rectangle;
-import tasks.task3.Employee;
-import tasks.task4.Author;
-import tasks.task4.Book;
-import tasks.task5.MyPoint;
-import tasks.task6.MyTriangle;
-
-import java.awt.*;
+import tasks.part1.task1.Circle;
+import tasks.part1.task2.Rectangle;
+import tasks.part1.task3.Employee;
+import tasks.part1.task4.Author;
+import tasks.part1.task4.Book;
+import tasks.part1.task5.MyPoint;
+import tasks.part1.task6.MyTriangle;
 
 public class Main {
     public static void main(String[] args) {

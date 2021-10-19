@@ -1,4 +1,4 @@
-package tasks.task6;
+package tasks.part1.task6;
 
 public class DoubleComparator {
     private static final double EPS = 0.000001d;

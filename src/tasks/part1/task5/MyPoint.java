@@ -1,4 +1,4 @@
-package tasks.task5;
+package tasks.part1.task5;
 
 public class MyPoint {
     private int x = 0;

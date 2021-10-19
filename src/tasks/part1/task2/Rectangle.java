@@ -1,4 +1,4 @@
-package tasks.task2;
+package tasks.part1.task2;
 
 public class Rectangle {
     private float length = 1.0f;
