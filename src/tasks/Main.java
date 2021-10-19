@@ -6,6 +6,7 @@ import tasks.task3.Employee;
 import tasks.task4.Author;
 import tasks.task4.Book;
 import tasks.task5.MyPoint;
+import tasks.task6.MyTriangle;
 
 import java.awt.*;
 
@@ -42,5 +43,10 @@ public class Main {
         System.out.println(p2);
         System.out.println(p1.distance(p2));
         System.out.println(p1.distance());
+
+        MyTriangle myTriangle = new MyTriangle(new MyPoint(0,0),new MyPoint(2,0), new MyPoint(1,1));
+        System.out.println(myTriangle);
+        System.out.println(myTriangle.getPerimeter());
+        System.out.println(myTriangle.getType());
     }
 }
