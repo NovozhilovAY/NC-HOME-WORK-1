@@ -6,7 +6,9 @@ import tasks.part1.task3.Employee;
 import tasks.part1.task4.Author;
 import tasks.part1.task4.Book;
 import tasks.part1.task5.MyPoint;
+import tasks.part1.task6.DoubleComparator;
 import tasks.part1.task6.MyTriangle;
+import tasks.part2.task1.MyComplex;
 
 public class Main {
     public static void main(String[] args) {
@@ -46,5 +48,30 @@ public class Main {
         System.out.println(myTriangle);
         System.out.println(myTriangle.getPerimeter());
         System.out.println(myTriangle.getType());
+
+        double a = 0.9;
+        double b = 0.31 * 3.0;
+        System.out.println(a == b);
+        System.out.println(a < b);
+        System.out.println(a > b);
+        System.out.println();
+        System.out.println(DoubleComparator.equal(a,b));
+        System.out.println(DoubleComparator.moreOrEqual(a, b));
+        System.out.println(DoubleComparator.lessOrEqual(a, b));
+
+        MyComplex mc1 = new MyComplex(1,-3);
+        MyComplex mc2 = new MyComplex();
+        MyComplex mc3 = new MyComplex(-4,-1);
+        System.out.println(mc1);
+        System.out.println(mc2);
+        System.out.println(mc1.addNew(mc3));
+        System.out.println(mc1.subtractNew(mc3));
+        System.out.println(mc1.multiply(mc3));
+        System.out.println(mc1.divide(mc3));
+        System.out.println(mc1.magnitude());
+        System.out.println(mc1.argument());
+        System.out.println(mc1.conjugate());
+        System.out.println(mc1.equals(mc2));
+
     }
 }
