@@ -5,10 +5,32 @@ public class DoubleComparator {
 
     private DoubleComparator(){}
 
-    public static boolean equal(double num1, double num2) {
-        if(Math.abs(num1-num2) < EPS)
+    public static boolean equal(double left, double right) {
+        if(Math.abs(left - right) < EPS)
             return true;
         else
             return false;
+    }
+
+    public static boolean more(double left, double right) {
+        if(!equal(left,right)) {
+            return left - right > 0;
+        }
+        return false;
+    }
+
+    public static boolean less(double left, double right) {
+        if(!equal(left,right)) {
+            return left - right < 0;
+        }
+        return false;
+    }
+
+    public static boolean moreOrEqual(double left, double right) {
+        return more(left, right) || equal(left, right);
+    }
+
+    public static boolean lessOrEqual(double left, double right) {
+        return  less(left, right) || equal(left, right);
     }
 }
