@@ -9,6 +9,7 @@ import tasks.part1.task5.MyPoint;
 import tasks.part1.task6.DoubleComparator;
 import tasks.part1.task6.MyTriangle;
 import tasks.part2.task1.MyComplex;
+import tasks.part2.task2.MyPolynomial;
 
 public class Main {
     public static void main(String[] args) {
@@ -72,6 +73,19 @@ public class Main {
         System.out.println(mc1.argument());
         System.out.println(mc1.conjugate());
         System.out.println(mc1.equals(mc2));
+
+        MyPolynomial mp = new MyPolynomial(0,2,3,0);
+        System.out.println(mp);
+        MyPolynomial mp1 = new MyPolynomial(0, 0, 0, 4, 5, 6);
+        MyPolynomial mp2 = new MyPolynomial(1, 2, 3);
+        System.out.println(mp1.multiply(mp2));
+        System.out.println(mp1.add(mp2));
+        System.out.println(mp2.evaluate(2));
+        MyPolynomial mp3 = new MyPolynomial(-2, -2, -3);
+        MyPolynomial mp4 = new MyPolynomial(1, 1, 1, 5);
+        System.out.println(mp3.add(mp4));
+
+
 
     }
 }
