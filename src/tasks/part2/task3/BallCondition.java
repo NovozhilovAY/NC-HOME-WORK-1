@@ -1,0 +1,5 @@
+package tasks.part2.task3;
+
+public enum BallCondition {
+    IN_CONTAINER, TOUCHES_VERTICAL_LINES, TOUCHES_HORIZONTAL_LINES, TOUCHES_BOTH_LINES
+}

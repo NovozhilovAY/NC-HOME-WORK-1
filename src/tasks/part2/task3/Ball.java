@@ -1,63 +1,36 @@
 package tasks.part2.task3;
+import javafx.scene.paint.Color;
 
-public class Ball {
-    private float x;
-    private float y;
-    private  int radius;
-    private float xDelta;
-    private float yDelta;
+public class Ball extends javafx.scene.shape.Circle{
+    private double xDelta;
+    private double yDelta;
 
-    public Ball(float x, float y, int radius, int speed, int direction) {
-        this.x = x;
-        this.y = y;
-        this.radius = radius;
-        xDelta = (float) (speed * Math.cos(Math.toRadians(direction)));
-        yDelta = (float) (-speed * Math.sin(Math.toRadians(direction)));
+    public Ball(double x, double y, double radius, int speed, int direction) {
+        super(x, y, radius);
+        xDelta = speed * Math.cos(Math.toRadians(direction));
+        yDelta = -speed * Math.sin(Math.toRadians(direction));
+        setFill(Color.RED);
     }
 
-    public float getX() {
-        return x;
-    }
-
-    public void setX(float x) {
-        this.x = x;
-    }
-
-    public float getY() {
-        return y;
-    }
-
-    public void setY(float y) {
-        this.y = y;
-    }
-
-    public int getRadius() {
-        return radius;
-    }
-
-    public void setRadius(int radius) {
-        this.radius = radius;
-    }
-
-    public float getXDelta() {
+    public double getXDelta() {
         return xDelta;
     }
 
-    public void setXDelta(float xDelta) {
+    public void setXDelta(double xDelta) {
         this.xDelta = xDelta;
     }
 
-    public float getYDelta() {
+    public double getYDelta() {
         return yDelta;
     }
 
-    public void setYDelta(float yDelta) {
+    public void setYDelta(double yDelta) {
         this.yDelta = yDelta;
     }
 
     public void move() {
-        x += xDelta;
-        y += yDelta;
+        setCenterX(getCenterX() + xDelta);
+        setCenterY(getCenterY() + yDelta);
     }
 
     public void reflectHorizontal() {
@@ -71,8 +44,8 @@ public class Ball {
     @Override
     public String toString() {
         return "Ball[" +
-                "(" + x +
-                "," + y +
+                "(" + getCenterX() +
+                "," + getCenterY() +
                 "), speed=(" + xDelta +
                 "," + yDelta +
                 ")]";

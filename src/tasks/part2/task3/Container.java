@@ -1,52 +1,41 @@
 package tasks.part2.task3;
+import javafx.scene.paint.Color;
 
-public class Container {
-    private int x1;
-    private int y1;
-    private int x2;
-    private int y2;
+public class Container extends javafx.scene.shape.Rectangle {
 
     public Container(int x1, int y1, int width, int height) {
-        this.x1 = x1;
-        this.y1 = y1;
-        this.x2 = x1 + width;
-        this.y2 = y1 + height;
+        super(x1, y1, width, height);
+        setFill(Color.WHITE);
+        setStroke(Color.BLACK);
     }
 
-    public int getX() {
-        return x1;
+    public double getX2(){
+        return getX() + getWidth();
     }
 
-    public int getY() {
-        return y1;
+    public double getY2(){
+        return getY() + getHeight();
     }
 
-    public int getWidth() {
-        return x2 - x1;
-    }
 
-    public int getHeight() {
-        return y2 - y1;
-    }
-
-    public boolean collides(Ball ball) {
-        float ballX = ball.getX();
-        float ballY = ball.getY();
-        int radius = ball.getRadius();
-        if(ballX + radius <= x2 && ballX - radius >= x1 &&
-           ballY + radius <= y2 && ballY - radius >= y1 ) {
-            return true;
+    public BallCondition getBallCondition(Ball ball) {
+        double ballX = ball.getCenterX();
+        double ballY = ball.getCenterY();
+        double radius = ball.getRadius();
+        boolean ballTouchesVerticalLines = ballX + radius >= getX2() || ballX - radius <= getX();
+        boolean ballTouchesHorizontalLines = ballY + radius >= getY2() || ballY - radius <= getY();
+        if(ballTouchesHorizontalLines && ballTouchesVerticalLines) {
+            return BallCondition.TOUCHES_BOTH_LINES;
+        }else if(ballTouchesVerticalLines) {
+            return BallCondition.TOUCHES_VERTICAL_LINES;
+        }else if (ballTouchesHorizontalLines){
+            return BallCondition.TOUCHES_HORIZONTAL_LINES;
         }
-        return false;
+        return BallCondition.IN_CONTAINER;
     }
 
     @Override
     public String toString() {
-        return "Container[" +
-                "(" + x1 +
-                "," + y1 +
-                "), (" + x2 +
-                "," + y2 +
-                ")]";
+        return "Container[(" + getX() + "," + getY() + "),(" + getX2() + "," + getY2() + ")]";
     }
 }
