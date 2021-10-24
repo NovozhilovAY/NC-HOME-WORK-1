@@ -10,6 +10,8 @@ import tasks.part1.task6.DoubleComparator;
 import tasks.part1.task6.MyTriangle;
 import tasks.part2.task1.MyComplex;
 import tasks.part2.task2.MyPolynomial;
+import tasks.part2.task3.Ball;
+import tasks.part2.task3.Container;
 
 public class Main {
     public static void main(String[] args) {
@@ -85,7 +87,9 @@ public class Main {
         MyPolynomial mp4 = new MyPolynomial(1, 1, 1, 5);
         System.out.println(mp3.add(mp4));
 
-
-
+        Ball ball = new Ball(0, 0, 3, 10, 30);
+        System.out.println(ball);
+        Container container = new Container(0,0,12,12);
+        System.out.println(container);
     }
 }
