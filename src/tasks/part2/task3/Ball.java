@@ -1,6 +1,8 @@
 package tasks.part2.task3;
 import javafx.scene.paint.Color;
 
+import java.util.Objects;
+
 public class Ball extends javafx.scene.shape.Circle{
     private double xDelta;
     private double yDelta;
@@ -49,5 +51,24 @@ public class Ball extends javafx.scene.shape.Circle{
                 "), speed=(" + xDelta +
                 "," + yDelta +
                 ")]";
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Ball)) return false;
+
+        Ball ball = (Ball) o;
+
+        if (Double.compare(ball.xDelta, xDelta) != 0) return false;
+        if (Double.compare(super.getCenterX(), ball.getCenterX()) != 0) return false;
+        if (Double.compare(super.getCenterY(), ball.getCenterY()) != 0) return false;
+        if (Double.compare(super.getRadius(), ball.getRadius()) != 0) return false;
+        return Double.compare(ball.yDelta, yDelta) == 0;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(xDelta,yDelta,super.getCenterX(),super.getCenterY(),super.getRadius());
     }
 }

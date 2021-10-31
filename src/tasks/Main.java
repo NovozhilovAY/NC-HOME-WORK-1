@@ -91,5 +91,13 @@ public class Main {
         System.out.println(ball);
         Container container = new Container(0,0,12,12);
         System.out.println(container);
+
+        Ball ball1 = new Ball(0, 0, 3, 11, 30);
+        System.out.println(ball1.equals(ball));
+        System.out.println(ball1.hashCode() == ball.hashCode());
+
+        Container container1 = new Container(0,0,12,12);
+        System.out.println(container.equals(container1));
+        System.out.println(container.hashCode() == container1.hashCode());
     }
 }

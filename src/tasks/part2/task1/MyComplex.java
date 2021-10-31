@@ -3,6 +3,8 @@ package tasks.part2.task1;
 import com.sun.istack.internal.NotNull;
 import tasks.part1.task6.DoubleComparator;
 
+import java.util.Objects;
+
 public class MyComplex {
     private double real = 0.0;
     private double imag = 0.0;
@@ -137,5 +139,18 @@ public class MyComplex {
     public MyComplex conjugate() {
         imag = -imag;
         return this;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        MyComplex myComplex = (MyComplex) o;
+        return Double.compare(myComplex.real, real) == 0 && Double.compare(myComplex.imag, imag) == 0;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(real, imag);
     }
 }

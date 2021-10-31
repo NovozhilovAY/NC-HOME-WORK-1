@@ -1,6 +1,8 @@
 package tasks.part2.task3;
 import javafx.scene.paint.Color;
 
+import java.util.Objects;
+
 public class Container extends javafx.scene.shape.Rectangle {
 
     public Container(int x1, int y1, int width, int height) {
@@ -37,5 +39,23 @@ public class Container extends javafx.scene.shape.Rectangle {
     @Override
     public String toString() {
         return "Container[(" + getX() + "," + getY() + "),(" + getX2() + "," + getY2() + ")]";
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if(this == obj) return true;
+        if(obj == null || this.getClass() != obj.getClass()) return false;
+
+        Container container = (Container) obj;
+
+        if(Double.compare(getX(), container.getX()) != 0) return false;
+        if(Double.compare(getY(), container.getY()) != 0) return false;
+        if(Double.compare(getWidth(), container.getWidth()) != 0) return false;
+        return (Double.compare(getHeight(), container.getHeight()) == 0);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getX(), getY(), getWidth(), getHeight());
     }
 }
